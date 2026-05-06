@@ -2,10 +2,6 @@
 
 > Upload an image. Watch it get sliced, shuffled, and sorted back — live, with bubble sort.
 
-![stripsy demo](https://img.shields.io/badge/status-ready-brightgreen) ![html](https://img.shields.io/badge/html-5-orange) ![css](https://img.shields.io/badge/css-3-blue) ![js](https://img.shields.io/badge/javascript-vanilla-yellow)
-
----
-
 ## What is this?
 
 **stripsy** cuts your image into vertical strips, scrambles them, then sorts them back in real-time using **Bubble Sort** — while showing you exactly which line of code is running.
@@ -31,7 +27,7 @@ It's a sorting algorithm visualizer disguised as a guessing game.
 No install. No dependencies. Just open in browser.
 
 ```bash
-git clone https://github.com/yourusername/stripsy.git
+git clone https://github.com/praful77jha/stripsy.git
 cd stripsy
 # Open index.html in Chrome/Firefox
 ```
