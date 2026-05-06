@@ -77,15 +77,17 @@ const H = Math.round(img.height * scale);
   canvas.width = W;
   canvas.height = H;
 
-  const sw = Math.floor(W / STRIPS);
   strips = [];
-  for (let i = 0; i < STRIPS; i++) {
-    const off = document.createElement('canvas');
-    off.width = sw; off.height = H;
-    const c = off.getContext('2d');
-    c.drawImage(img, i * sw, 0, sw, H, 0, 0, sw, H);
-    strips.push(off);
-  }
+for (let i = 0; i < STRIPS; i++) {
+  const x1 = Math.floor(img.width * i / STRIPS);
+  const x2 = Math.floor(img.width * (i + 1) / STRIPS);
+  const sw = x2 - x1;
+  const off = document.createElement('canvas');
+  off.width = sw; off.height = img.height;
+  const c = off.getContext('2d');
+  c.drawImage(img, x1, 0, sw, img.height, 0, 0, sw, img.height);
+  strips.push(off);
+}
 
   // Shuffle
   order = Array.from({ length: STRIPS }, (_, i) => i);
@@ -141,18 +143,15 @@ function updateStats() {
 // ─── Drawing ──────────────────────────────────────────────────────────────────
 function drawStrips(highlightI = -1, highlightJ = -1, overridePositions = null) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const sw = Math.floor(canvas.width / STRIPS);
 
   for (let k = 0; k < STRIPS; k++) {
-    const x = overridePositions ? overridePositions[k] : k * sw;
+    const x = overridePositions ? overridePositions[k] : Math.floor(canvas.width * k / STRIPS);
+    const sw = Math.floor(canvas.width * (k + 1) / STRIPS) - Math.floor(canvas.width * k / STRIPS);
     ctx.drawImage(strips[order[k]], x, 0, sw, canvas.height);
 
     if (k === highlightI || k === highlightJ) {
-      ctx.fillStyle = k === highlightI
-        ? 'rgba(255,69,69,0.22)'
-        : 'rgba(232,255,71,0.18)';
+      ctx.fillStyle = k === highlightI ? 'rgba(255,69,69,0.22)' : 'rgba(232,255,71,0.18)';
       ctx.fillRect(x, 0, sw, canvas.height);
-
       ctx.strokeStyle = k === highlightI ? '#ff4545' : '#e8ff47';
       ctx.lineWidth = 2;
       ctx.strokeRect(x + 1, 0, sw - 2, canvas.height);
