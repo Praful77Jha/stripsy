@@ -79,7 +79,3 @@ stripsy/
          ↓ bubble sort ↓
 [ 1 ][ 2 ][ 3 ][ 7 ][ 9 ][ 11 ]  ← sorted ✓
 ```
-
----
-
-Made with 🖤 — pure HTML/CSS/JS, zero frameworks.
