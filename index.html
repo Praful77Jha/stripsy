@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess The Image</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Guess The <span>Image.</span></h1>
+    <p>11 shuffled strips · one bubble sort · zero chill — see who figures it out first.</p>
+  </header>
+
+  <div class="upload-zone" id="uploadZone">
+    <div class="icon">🖼️</div>
+    <p><strong>Click or drag</strong> an image here</p>
+    <p class="sub">PNG · JPG · WEBP</p>
+    <input type="file" id="fileInput" accept="image/*">
+  </div>
+
+  <div class="controls">
+    <div class="control-group">
+      <label>Strips</label>
+      <select id="stripCount">
+        <option value="7">7</option>
+        <option value="11" selected>11</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label>Speed</label>
+      <select id="speedSelect">
+        <option value="600">Slow</option>
+        <option value="300" selected>Normal</option>
+        <option value="120">Fast</option>
+        <option value="40">Insane</option>
+      </select>
+    </div>
+    <button class="btn-primary" id="startBtn" disabled>▶ Start</button>
+    <button class="btn-secondary" id="resetBtn" disabled>↺ Reset</button>
+  </div>
+
+  <div class="game-wrapper" id="gameWrapper" style="display:none">
+    <div class="status-bar">
+      <span class="phase" id="phaseLabel">READY</span>
+      <div class="stats">
+        <span>COMPARISONS <b id="cmpCount">000</b></span>
+        <span>SWAPS <b id="swpCount">000</b></span>
+        <span>PASS <b id="passCount">00</b></span>
+      </div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas"></canvas>
+      <div class="overlay-text" id="overlayText">✓ SORTED!</div>
+    </div>
+    <div class="strip-indices" id="stripIndices"></div>
+  </div>
+
+  <div class="code-panel" id="codePanel" style="display:none">
+    <div class="code-header">
+      <div class="dot r"></div>
+      <div class="dot y"></div>
+      <div class="dot g"></div>
+      <span class="code-filename">bubble_sort.js</span>
+    </div>
+    <div class="code-body" id="codeBody"></div>
+  </div>
+
+  <script src="bubble_sort.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
