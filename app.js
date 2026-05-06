@@ -1,4 +1,4 @@
-// ─── DOM References ──────────────────────────────────────────────────────────
+// ─── DOM References ─────────
 const uploadZone   = document.getElementById('uploadZone');
 const fileInput    = document.getElementById('fileInput');
 const startBtn     = document.getElementById('startBtn');
@@ -14,7 +14,7 @@ const passCountEl  = document.getElementById('passCount');
 const overlayText  = document.getElementById('overlayText');
 const stripIndicesEl = document.getElementById('stripIndices');
 
-// ─── State ───────────────────────────────────────────────────────────────────
+// ─── State ─────
 let img       = null;
 let strips    = [];
 let order     = [];
@@ -37,7 +37,7 @@ let animI        = -1;
 let animJ        = -1;
 const ANIM_DURATION = 180; // ms
 
-// ─── Upload Handling ─────────────────────────────────────────────────────────
+// ─── Upload Handling ───
 uploadZone.addEventListener('click', () => fileInput.click());
 uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag'); });
 uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag'));
@@ -65,13 +65,15 @@ function loadImage(file) {
   reader.readAsDataURL(file);
 }
 
-// ─── Game Setup ───────────────────────────────────────────────────────────────
+// ─── Game Setup ────
 function setupGame() {
   STRIPS = parseInt(document.getElementById('stripCount').value);
   SPEED  = parseInt(document.getElementById('speedSelect').value);
 
-  const W = 700;
-  const H = Math.round(W * img.height / img.width);
+ const maxW = window.innerWidth > 1200 ? 800 : Math.min(window.innerWidth - 40, 700);
+const scale = maxW / img.width;
+const W = Math.round(img.width * scale);
+const H = Math.round(img.height * scale);
   canvas.width = W;
   canvas.height = H;
 
