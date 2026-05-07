@@ -1,81 +1,75 @@
-# stripsy 🎞️
+# 🖼️ stripsy
 
-> Upload an image. Watch it get sliced, shuffled, and sorted back — live, with bubble sort.
-
-## What is this?
-
-**stripsy** cuts your image into vertical strips, scrambles them, then sorts them back in real-time using **Bubble Sort** — while showing you exactly which line of code is running.
-
-It's a sorting algorithm visualizer disguised as a guessing game.
+A sorting algorithm visualizer that slices your image into strips, shuffles them, and sorts them back live using bubble sort.
 
 ---
 
-## Features
+## 🚀 Live Demo
 
-- 🖼️ Upload any image (PNG, JPG, WEBP)
-- ✂️ Slice into 7 / 11 / 15 / 20 strips
-- 🔀 Auto shuffle on load
-- 📊 Live bubble sort with smooth swap animation
-- 🔊 Sound effects — compare, swap, and done
-- 💻 Live code panel with line-by-line highlight
-- ⚡ 4 speed modes — Slow, Normal, Fast, Insane
+👉 https://praful77jha.github.io/stripsy/
 
 ---
 
-## How to Run
+## 🧑‍💻 About
 
-No install. No dependencies. Just open in browser.
-
-```bash
-git clone https://github.com/praful77jha/stripsy.git
-cd stripsy
-# Open index.html in Chrome/Firefox
-```
-
-Or just double-click `index.html`. That's it.
+stripsy is a creative take on algorithm visualization. Instead of boring bars or numbers, it uses your own image — slicing it into vertical strips, shuffling them into chaos, then watching bubble sort restore them back to the original, one swap at a time.
 
 ---
 
-## File Structure
+## ✨ Features
 
-```
-stripsy/
-├── index.html       # Structure & layout
-├── style.css        # Dark theme, fonts, animations
-├── bubble_sort.js   # Sorting algorithm + sounds + code panel
-└── app.js           # Main game logic + canvas + animation
-```
+- Upload any image and watch it get sliced into strips
+- Strips are shuffled randomly to start the visualization
+- Bubble sort runs live, swapping strips step by step
+- Visual and intuitive way to understand sorting algorithms
+- Fully browser-based — no installs needed
 
 ---
 
-## How it Works
+## 🛠️ Tech Stack
 
-1. Image is drawn onto an HTML5 Canvas
-2. Cut into N equal vertical strips using offscreen canvases
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+
+---
+
+## 📸 Preview
+
+### 🏠 Home / Upload Screen
+![Home](assets/images/home.png)
+
+### 🔀 Shuffled Strips
+![Shuffled](assets/images/shuffled.png)
+
+### ✅ Sorting in Progress
+![Sorting](assets/images/sorting.png)
+
+---
+
+## 📸 How It Works
+
+1. Upload an image
+2. The image is sliced into equal vertical strips
 3. Strips are shuffled randomly
-4. Bubble sort runs step by step with a timer
-5. Each swap triggers a smooth sliding animation + sound
-6. Code panel highlights the currently executing line
-7. When sorted — reveal sound plays ✓
+4. Bubble sort runs in real time, sorting strips back into place
+5. Watch the image reconstruct itself!
 
 ---
 
-## Tech Stack
+## 📚 What I Learned
 
-| Thing | Used For |
-|-------|----------|
-| HTML5 Canvas | Image slicing & rendering |
-| Web Audio API | Sound effects |
-| Vanilla JS | Bubble sort + animation |
-| CSS3 | Dark theme + transitions |
-| Google Fonts | Syne + JetBrains Mono |
+- Implementing bubble sort visually in the browser
+- Working with the Canvas API / CSS transforms for image slicing
+- Animating DOM elements in sync with algorithm steps
+- Creative problem-solving with JavaScript
 
 ---
 
-## Preview
+## 🔗 Links
 
-```
-[ 9 ][ 3 ][ 11 ][ 1 ][ 7 ][ 2 ]  ← shuffled
-         ↓ bubble sort ↓
-[ 1 ][ 2 ][ 3 ][ 7 ][ 9 ][ 11 ]  ← sorted ✓
-```
+- GitHub: https://github.com/Praful77Jha
+
+---
+
+Sorting algorithms, but make it visual 🚀
