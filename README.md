@@ -42,8 +42,8 @@ stripsy is a creative take on algorithm visualization. Instead of boring bars or
 ### 🔀 Shuffled Strips
 ![Shuffled](assets/images/shuffled.png)
 
-### ✅ Sorting in Progress
-![Sorting](assets/images/sorting.png)
+### ✅ Sorted
+![Sorted](assets/images/sorted.png)
 
 ---
 
